@@ -37,6 +37,7 @@ public interface ProtocolMetadataProvider {
     /**
      * @return True if protocol uses Ion as the wire format. False otherwise.
      */
+    @Deprecated
     boolean isIonProtocol();
 
     /**

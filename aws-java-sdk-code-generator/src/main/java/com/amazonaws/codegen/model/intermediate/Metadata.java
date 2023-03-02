@@ -373,8 +373,9 @@ public class Metadata {
         return this;
     }
 
+    @Deprecated
     public boolean isIonProtocol() {
-        return protocolMetadataProvider.isIonProtocol();
+        return false;
     }
 
     public boolean isCborProtocol() {

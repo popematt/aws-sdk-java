@@ -307,18 +307,6 @@ public class SDKGlobalConfiguration {
     public static final String AWS_CBOR_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableCbor";
 
     /**
-     * Environment variable to disable Ion binary protocol. This forces the request
-     * to be sent over the wire as Ion text.
-     */
-    public static final String AWS_ION_BINARY_DISABLE_ENV_VAR = "AWS_ION_BINARY_DISABLE";
-
-    /**
-     * System property to disable Ion binary protocol. This forces the request to be sent over the wire
-     * as Ion text
-     */
-    public static final String AWS_ION_BINARY_DISABLE_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableIonBinary";
-
-    /**
      * Environment variable to disable loading credentials or regions from EC2 Metadata instance service.
      */
     public static final String AWS_EC2_METADATA_DISABLED_ENV_VAR = "AWS_EC2_METADATA_DISABLED";
@@ -399,9 +387,9 @@ public class SDKGlobalConfiguration {
                 isPropertyEnabled(System.getenv(AWS_CBOR_DISABLE_ENV_VAR));
     }
 
+    @Deprecated
     public static boolean isIonBinaryDisabled() {
-        return isPropertyEnabled(System.getProperty(AWS_ION_BINARY_DISABLE_SYSTEM_PROPERTY)) ||
-                isPropertyEnabled(System.getenv(AWS_ION_BINARY_DISABLE_ENV_VAR));
+        return true;
     }
 
     public static boolean isEc2MetadataDisabled() {

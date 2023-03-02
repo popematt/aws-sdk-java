@@ -27,35 +27,6 @@ import java.util.Collections;
 import org.junit.Test;
 
 public class SdkJsonProtocolFactoryTest {
-    @Test
-    public void ionBinaryEnabledGeneratorWritesIonBinary() {
-        StructuredJsonGenerator generator = protocolFactory(IonEnabled.YES, IonBinaryEnabled.YES).createGenerator();
-        generator.writeValue(true);
-        byte[] actual = generator.getBytes();
-        byte[] expected = bytes(0xE0, 0x01, 0x00, 0xEA, 0x11);
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void ionBinaryDisabledGeneratorWritesIonText() throws Exception {
-        StructuredJsonGenerator generator = protocolFactory(IonEnabled.YES, IonBinaryEnabled.NO).createGenerator();
-        generator.writeValue(true);
-        byte[] actual = generator.getBytes();
-        byte[] expected = "true".getBytes("UTF-8");
-        assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void ionBinaryEnabledUsesIonBinaryContentType() {
-        SdkJsonProtocolFactory protocolFactory = protocolFactory(IonEnabled.YES, IonBinaryEnabled.YES);
-        assertEquals("application/x-amz-ion-1.0", protocolFactory.getContentType());
-    }
-
-    @Test
-    public void ionBinaryDisabledUsesIonTextContentType() {
-        SdkJsonProtocolFactory protocolFactory = protocolFactory(IonEnabled.YES, IonBinaryEnabled.NO);
-        assertEquals("text/x-amz-ion-1.0", protocolFactory.getContentType());
-    }
 
     @Test
     public void errorShapeMetadata_hasCustomUnmarshaller_doesNotUseExceptionClass() {

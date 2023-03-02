@@ -19,7 +19,6 @@ import com.amazonaws.codegen.protocol.ApiGatewayProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsCborProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.AwsJsonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.Ec2ProtocolMetdataProvider;
-import com.amazonaws.codegen.protocol.IonProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.QueryProtocolMetadataProvider;
 import com.amazonaws.codegen.protocol.RestJsonProtocolMetdataProvider;
